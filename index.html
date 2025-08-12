@@ -1,36 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
   <title>Frontend Mentor | 3-column preview card component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    .main {
+      width: 100%;
+      height: 100vh;
+      background-color: rgb(255, 255, 255);
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .main,
+    .card,
+    .section1,
+    .section2,
+    .section3 {
+      display: flex;
+      align-items: center;
+    }
+
+    .card {
+      width: 810px;
+      height: 410px;
+      border-radius: 10px;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .section1,
+    .section2,
+    .section3 {
+      width: 270px;
+      height: 100%;
+      flex-direction: column;
+      padding: 40px;
+    }
+
+    .section1 {
+      background-color: #e28525;
+      border-radius: 5px 0 0 5px;
+    }
+
+    .section2 {
+      background-color: #016972;
+    }
+
+    .section3 {
+      background-color: #00403f;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .icon-section {
+      height: 35px;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: left;
+    }
+
+    .icon1 {
+      background-image: url("images/icon-sedans.svg");
+    }
+
+    .icon2 {
+      background-image: url("images/icon-suvs.svg");
+    }
+
+    .icon3 {
+      background-image: url("images/icon-luxury.svg");
+    }
+
+    .section3 .content-section {
+      padding: 25px 0px 0 0;
+    }
+
+    .content-section {
+      width: 100%;
+      padding: 25px 8px 0 0;
+      font-family: Agdasima;
+      color: antiquewhite;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-section>p {
+      margin-top: 30px;
+      line-height: 1.2rem;
+      letter-spacing: 1px;
+      font-family: calibri;
+      font-size: 0.8rem;
+      color: rgb(219, 193, 166);
+      word-spacing: 2px;
+      font-weight: 100;
+    }
+
+    .button-section {
+      width: 130px;
+      height: 45px;
+      margin: 60px 65px 0 0;
+      background-color: antiquewhite;
+      border-radius: 20px;
+      border: 3px solid #ffff;
+      text-align: center;
+      padding: 10px 0px;
+      font-family: calibri;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .text1 {
+      color: #e28525;
+    }
+
+    .text2 {
+      color: #016972;
+    }
+
+    .text3 {
+      color: #00403f;
+    }
+
+    .button-section:hover,
+    .button-section>p:hover {
+      background-color: transparent;
+      color: antiquewhite;
+    }
+
+    .attribution {
+      font-size: 18px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    @media (max-width:500px) {
+      .main {
+        height: 130vh;
+      }
+
+      .card {
+        margin: 30px 0 0 0;
+        height: auto;
+        width: auto;
+        flex-direction: column;
+      }
+
+      .section1,
+      .section2,
+      .section3 {
+        padding: 35px;
+      }
+
+      .section1 {
+        border-radius: 5px 5px 0 0;
+      }
+
+      .section3 .content-section {
+        padding: 20px 10px 0 0;
+      }
+
+      .content-section {
+        padding: 20px 0 0 0;
+        ;
+      }
+
+      .content-section>p {
+        margin-top: 20px;
+        font-weight: bold;
+        letter-spacing: 0.3px;
+      }
+
+      .button-section {
+        margin: 30px 65px 0 0;
+      }
+
+      .section3 {
+        border-radius: 0 0 5px 5px;
+      }
+
+      .attribution {
+        font-size: 12px;
+      }
+
+    }
   </style>
 </head>
+
 <body>
-  
-  Sedans
-  Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city 
-  or on your next road trip.
-
-  SUVs
-  Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation 
-  and off-road adventures.
-
-  Luxury
-  Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury 
-  rental and arrive in style.
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="main">
+    <div class="card">
+      <div class="section1">
+        <div class="icon-section icon1"></div>
+        <div class="content-section">
+          <h1>SEDANS</h1>
+          <p>Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city
+            or on your next road trip.</p>
+        </div>
+        <div class="button-section">
+          <p class="text1">Learn More</p>
+        </div>
+      </div>
+      <div class="section2">
+        <div class="icon-section icon2"></div>
+        <div class="content-section">
+          <h1>SUVS</h1>
+          <p>Take an SUV for its spacious interior, power, and versatility. Perfect for your next family
+            vacation and off-road adventure.</p>
+        </div>
+        <div class="button-section">
+          <p class="text2">Learn More</p>
+        </div>
+      </div>
+      <div class="section3">
+        <div class="icon-section icon3"></div>
+        <div class="content-section">
+          <h1>LUXURY</h1>
+          <p>Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury
+            rental and arrive in style.</p>
+        </div>
+        <div class="button-section">
+          <p class="text3">Learn More</p>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Kode Master</a>.
+    </div>
   </div>
 </body>
+
 </html>
